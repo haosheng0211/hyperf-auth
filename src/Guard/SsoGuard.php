@@ -67,7 +67,7 @@ class SsoGuard extends JwtGuard
     {
         $token = parent::refresh($token);
 
-        if ($token){
+        if ($token) {
             $client = $client ?: $this->getClients()[0]; // 需要至少配置一个客户端
             $redisKey = str_replace('{uid}', (string) $this->id($token), $this->config['redis_key'] ?? 'u:token:{uid}');
             $this->redis->hSet($redisKey, $client, $token);

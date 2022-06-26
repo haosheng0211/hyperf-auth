@@ -24,7 +24,7 @@ use Hyperf\Di\Annotation\AbstractAnnotation;
 class Auth extends AbstractAnnotation
 {
     /**
-     * @var string
+     * @var ?string
      */
     public $value;
 
